@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_banner_advertising_sections",
+  "info": {
+    "displayName": "advertising_section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sub_heading": {
+      "type": "text"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "cover_image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

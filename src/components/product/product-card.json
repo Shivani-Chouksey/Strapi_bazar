@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_product_product_cards",
+  "info": {
+    "displayName": "product_card",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "text",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "old_price": {
+      "displayName": "price",
+      "type": "component",
+      "repeatable": false,
+      "component": "product.price"
+    },
+    "current_price": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.price"
+    },
+    "review_rating": {
+      "displayName": "review_rating",
+      "type": "component",
+      "repeatable": true,
+      "component": "product.review-rating"
+    },
+    "preview": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
