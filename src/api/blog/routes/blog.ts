@@ -1,7 +1,14 @@
-/**
- * blog router
- */
-
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreRouter('api::blog.blog');
+export default {
+  routes: [
+    // ✅ Default route: Get all blogs
+    {
+      method: "GET",
+      path: "/blogs",
+      handler: "blog.find",
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
+  ],
+};
