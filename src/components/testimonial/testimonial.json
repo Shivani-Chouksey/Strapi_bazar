@@ -1,21 +1,19 @@
 {
   "collectionName": "components_testimonial_testimonials",
   "info": {
-    "displayName": "testimonial"
+    "displayName": "testimonial",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "heading": {
-      "type": "string"
-    },
-    "sub": {
-      "type": "string"
-    },
-    "sub_heading": {
+    "content": {
       "type": "text"
     },
-    "review": {
-      "type": "blocks"
+    "user": {
+      "displayName": "user_Profile",
+      "type": "component",
+      "repeatable": false,
+      "component": "testimonial.user-profile"
     }
   }
 }

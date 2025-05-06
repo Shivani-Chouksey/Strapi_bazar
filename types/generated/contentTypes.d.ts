@@ -486,7 +486,11 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    blogs: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+    blog_section: Schema.Attribute.Component<'blog.blog-section', false>;
+    category_section: Schema.Attribute.Component<
+      'category.category-section',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -501,9 +505,14 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::home-page.home-page'
     >;
-    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    product_section: Schema.Attribute.Component<
+      'product.product-section',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    testimonials: Schema.Attribute.DynamicZone<['testimonial.testimonial']>;
+    testimonials: Schema.Attribute.DynamicZone<
+      ['testimonial.testimonial-section']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

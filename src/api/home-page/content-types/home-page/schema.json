@@ -26,11 +26,6 @@
         }
       }
     },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
-    },
     "advertising_section": {
       "type": "component",
       "repeatable": false,
@@ -41,16 +36,26 @@
         }
       }
     },
-    "blogs": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::blog.blog"
-    },
     "testimonials": {
       "type": "dynamiczone",
       "components": [
-        "testimonial.testimonial"
+        "testimonial.testimonial-section"
       ]
+    },
+    "category_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "category.category-section"
+    },
+    "product_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product.product-section"
+    },
+    "blog_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blog.blog-section"
     }
   }
 }
