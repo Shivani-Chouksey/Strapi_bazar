@@ -3,12 +3,15 @@
  */
 
 import { factories } from '@strapi/strapi'
+import { log } from 'console';
 
 export default factories.createCoreController('api::home-page.home-page',({strapi})=>({
    async find(ctx){
-
+    console.log("ctx",ctx.query)
+const locale:string=ctx.query.locale as string || "en";
     const entity=await strapi.documents('api::home-page.home-page').findOne({
         documentId:"erofpy3vz4jbrkdfdvd9kloc",
+        locale,
             populate: {
                 hero_section:{
                     populate: ['images'],
