@@ -496,6 +496,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    dynamic_components: Schema.Attribute.DynamicZone<
+      ['testimonial.testimonial-section']
+    >;
     hero_section: Schema.Attribute.Component<'banner.hero-banner', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -512,9 +515,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
-    testimonials: Schema.Attribute.DynamicZone<
-      ['testimonial.testimonial-section']
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

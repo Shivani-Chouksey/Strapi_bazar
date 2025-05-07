@@ -36,7 +36,7 @@
         }
       }
     },
-    "testimonials": {
+    "dynamic_components": {
       "type": "dynamiczone",
       "components": [
         "testimonial.testimonial-section"
