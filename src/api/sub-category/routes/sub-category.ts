@@ -3,5 +3,16 @@
  */
 
 import { factories } from '@strapi/strapi';
+import path from 'path';
 
-export default factories.createCoreRouter('api::sub-category.sub-category');
+export default{
+    routes:[{
+        method: "GET",
+        path: "/sub-categories",
+        handler: "sub-category.find",
+        config: {
+            policies: [],
+            middlewares: [],
+        },
+    }]
+}
