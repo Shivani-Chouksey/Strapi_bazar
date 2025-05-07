@@ -49,14 +49,14 @@ export default factories.createCoreController("api::category.category", ({strapi
   async find(ctx) {
     console.log("ctx query", ctx.query);
 
-    const name: string | undefined = typeof ctx.query.name === "string" ? ctx.query.name : undefined;
+    const slug: string | undefined = typeof ctx.query.slug === "string" ? ctx.query.slug : undefined;
     const subCategory: string | undefined = typeof ctx.query.sub_category === "string" ? ctx.query.sub_category : undefined;
 
     // Build filters
     const filters: any = {};
 
-    if (name?.trim()) {
-      filters.name = {$containsi: name};
+    if (slug?.trim()) {
+      filters.categroy_slug = {$containsi: slug};
     }
 
     if (subCategory?.trim()) {
@@ -73,6 +73,7 @@ export default factories.createCoreController("api::category.category", ({strapi
     ctx.query.filters = filters;
 
     ctx.query.populate = {
+      
       products: {
         populate: {
           images: true,
@@ -82,6 +83,7 @@ export default factories.createCoreController("api::category.category", ({strapi
           reviewRating: true,
         },
       },
+      sub_categories:true
     };
 
     const data = await super.find(ctx);
