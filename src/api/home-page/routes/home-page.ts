@@ -4,4 +4,8 @@
 
 import { factories } from '@strapi/strapi';
 
-export default factories.createCoreRouter('api::home-page.home-page');
+export default {
+    routes:[
+        {method: 'GET', path: '/home-page', handler: 'home-page.find', config: {policies: [], middlewares: []}},
+    ]
+}
