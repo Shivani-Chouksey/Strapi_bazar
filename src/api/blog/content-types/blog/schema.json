@@ -32,14 +32,6 @@
         }
       }
     },
-    "description": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "cover_image": {
       "type": "media",
       "multiple": true,

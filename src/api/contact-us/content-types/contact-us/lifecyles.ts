@@ -1,4 +1,3 @@
-console.log("✅ Contact-Us Lifecycle file loaded");
 export default{
     async afterCreate(event) {
         const { result } = event;
