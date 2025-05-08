@@ -53,20 +53,24 @@
       "type": "uid",
       "targetField": "heading"
     },
-    "related_to": {
-      "type": "enumeration",
-      "enum": [
-        "IT",
-        "APPLICATION",
-        "HELTH",
-        "EDUCATION",
-        "DESIGNING"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+    "blog_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-category.blog-category",
+      "inversedBy": "blogs"
+    },
+    "blog_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-tag.blog-tag",
+      "inversedBy": "blogs"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
