@@ -9,4 +9,12 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+  // 'global::customMiddleware', // Custom middleware
+  
+  // ✅ Your custom middleware runs after routes
+  {
+    name: 'global::customMiddleware',
+    config: {},
+  },
+
 ];

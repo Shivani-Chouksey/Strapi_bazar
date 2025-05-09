@@ -7,7 +7,7 @@ export default {
       handler: "blog.find",
       config: {
         policies: [],
-        middlewares: [],
+        middlewares: ['api::blog.custom-route-middleware'], // ✅ correct name
       },
     },
   ],
