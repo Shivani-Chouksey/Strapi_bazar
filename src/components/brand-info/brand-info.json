@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_brand_info_brand_infos",
+  "info": {
+    "displayName": "brand_info"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "address": {
+      "type": "text"
+    },
+    "navigations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation.navigation"
+    },
+    "actions": {
+      "displayName": "action",
+      "type": "component",
+      "repeatable": true,
+      "component": "brand-info.action"
+    },
+    "contact_number": {
+      "type": "integer"
+    }
+  }
+}

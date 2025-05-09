@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_navigation_children",
+  "info": {
+    "displayName": "children"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    }
+  }
+}

@@ -37,6 +37,41 @@ export interface BlogBlogSection extends Struct.ComponentSchema {
   };
 }
 
+export interface BrandInfoAction extends Struct.ComponentSchema {
+  collectionName: 'components_brand_info_actions';
+  info: {
+    displayName: 'action';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files'>;
+    path: Schema.Attribute.String;
+    style: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.String;
+  };
+}
+
+export interface BrandInfoBrandInfo extends Struct.ComponentSchema {
+  collectionName: 'components_brand_info_brand_infos';
+  info: {
+    displayName: 'brand_info';
+  };
+  attributes: {
+    actions: Schema.Attribute.Component<'brand-info.action', true>;
+    address: Schema.Attribute.Text;
+    contact_number: Schema.Attribute.Integer;
+    email: Schema.Attribute.Email;
+    logo: Schema.Attribute.Media<'images' | 'files'>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    navigations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation.navigation'
+    >;
+  };
+}
+
 export interface CategoryCategorySection extends Struct.ComponentSchema {
   collectionName: 'components_category_category_sections';
   info: {
@@ -51,6 +86,42 @@ export interface CategoryCategorySection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     category_section_subHeading: Schema.Attribute.String &
       Schema.Attribute.Required;
+  };
+}
+
+export interface FooterColumns extends Struct.ComponentSchema {
+  collectionName: 'components_footer_columns';
+  info: {
+    displayName: 'columns';
+  };
+  attributes: {
+    navigations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation.navigation'
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface FooterSocial extends Struct.ComponentSchema {
+  collectionName: 'components_footer_socials';
+  info: {
+    displayName: 'social';
+  };
+  attributes: {
+    platform: Schema.Attribute.String;
+    url: Schema.Attribute.Text;
+  };
+}
+
+export interface NavigationChildren extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_children';
+  info: {
+    displayName: 'children';
+  };
+  attributes: {
+    path: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -153,7 +224,12 @@ declare module '@strapi/strapi' {
       'banner.advertising-section': BannerAdvertisingSection;
       'banner.hero-banner': BannerHeroBanner;
       'blog.blog-section': BlogBlogSection;
+      'brand-info.action': BrandInfoAction;
+      'brand-info.brand-info': BrandInfoBrandInfo;
       'category.category-section': CategoryCategorySection;
+      'footer.columns': FooterColumns;
+      'footer.social': FooterSocial;
+      'navigation.children': NavigationChildren;
       'product.price': ProductPrice;
       'product.product-card': ProductProductCard;
       'product.product-section': ProductProductSection;
