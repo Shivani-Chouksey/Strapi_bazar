@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "home page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "banner.hero-banner",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "advertising_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "banner.advertising-section",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "dynamic_components": {
+      "type": "dynamiczone",
+      "components": [
+        "testimonial.testimonial-section"
+      ]
+    },
+    "category_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "category.category-section"
+    },
+    "product_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product.product-section"
+    },
+    "blog_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blog.blog-section"
+    }
+  }
+}

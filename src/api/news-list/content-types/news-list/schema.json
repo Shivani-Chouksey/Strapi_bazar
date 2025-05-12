@@ -1,0 +1,44 @@
+{
+  "collectionName": "news lists",
+  "info": {
+    "singularName": "news-list",
+    "pluralName": "news-lists",
+    "displayName": "News-list",
+    "description": "Stores news with metadata"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "source_id": {
+      "type": "string",
+      "required": false
+    },
+    "source_name": {
+      "type": "string",
+      "required": false
+    },
+    "author": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    },
+    "urlToImage": {
+      "type": "string"
+    },
+    "publishedAt": {
+      "type": "datetime"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

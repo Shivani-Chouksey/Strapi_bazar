@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_banner_hero_banners",
+  "info": {
+    "displayName": "hero_banner",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

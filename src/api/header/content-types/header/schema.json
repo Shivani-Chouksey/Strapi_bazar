@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "headers",
+  "info": {
+    "singularName": "header",
+    "pluralName": "headers",
+    "displayName": "header",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "brand": {
+      "displayName": "brand_info",
+      "type": "component",
+      "repeatable": false,
+      "component": "brand-info.brand-info"
+    },
+    "navigations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation.navigation",
+      "mappedBy": "header"
+    },
+    "actions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "brand-info.action"
+    }
+  }
+}

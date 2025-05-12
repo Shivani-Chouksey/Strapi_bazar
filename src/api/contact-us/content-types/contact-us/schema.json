@@ -1,0 +1,51 @@
+{
+    "kind": "collectionType",
+    "collectionName": "contact-us",
+    "info": {
+      "singularName": "contact-us",
+      "pluralName": "contact-entries",
+      "displayName": "Contact Us",
+      "description": "Form submissions from contact page"
+    },
+   
+    "options": {
+      "draftAndPublish": true
+    },
+    "pluginOptions": {
+      "i18n": {
+        "localized": true
+      }
+    },
+    "attributes": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "email": {
+          "type": "email",
+          "required": true
+        },
+        "phone": {
+          "type": "string",
+          "required": false
+        },
+        "message": {
+          "type": "text"
+        },
+        "subject": {
+          "type": "text"
+        },
+        "attachment": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": ["images", "files"]
+        },
+        "submittedAt": {
+          "type": "datetime",
+          "default": {
+            "kind": "now"
+          }
+        }}
+  }
+  

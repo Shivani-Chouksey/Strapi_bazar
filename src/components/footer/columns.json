@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_footer_columns",
+  "info": {
+    "displayName": "columns"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "navigations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation.navigation"
+    }
+  }
+}

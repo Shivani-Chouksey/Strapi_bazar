@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "columns": {
+      "displayName": "columns",
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.columns"
+    },
+    "social": {
+      "displayName": "social",
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.social"
+    },
+    "brand_info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "brand-info.brand-info"
+    },
+    "copyright": {
+      "type": "text"
+    }
+  }
+}

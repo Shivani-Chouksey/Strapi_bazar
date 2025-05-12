@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_brand_info_brand_infos",
+  "info": {
+    "displayName": "brand_info",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "address": {
+      "type": "text"
+    },
+    "contact_number": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_testimonial_testimonials",
+  "info": {
+    "displayName": "testimonial",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "user": {
+      "displayName": "user_Profile",
+      "type": "component",
+      "repeatable": false,
+      "component": "testimonial.user-profile"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navigations",
+  "info": {
+    "singularName": "navigation",
+    "pluralName": "navigations",
+    "displayName": "Navigation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "children": {
+      "displayName": "children",
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.children"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "header": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::header.header",
+      "inversedBy": "navigations"
+    }
+  }
+}
