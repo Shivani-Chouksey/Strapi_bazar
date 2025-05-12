@@ -29,6 +29,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "header": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::header.header",
+      "inversedBy": "navigations"
     }
   }
 }

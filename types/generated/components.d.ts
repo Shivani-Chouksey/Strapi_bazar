@@ -54,10 +54,10 @@ export interface BrandInfoAction extends Struct.ComponentSchema {
 export interface BrandInfoBrandInfo extends Struct.ComponentSchema {
   collectionName: 'components_brand_info_brand_infos';
   info: {
+    description: '';
     displayName: 'brand_info';
   };
   attributes: {
-    actions: Schema.Attribute.Component<'brand-info.action', true>;
     address: Schema.Attribute.Text;
     contact_number: Schema.Attribute.Integer;
     email: Schema.Attribute.Email;
@@ -65,10 +65,6 @@ export interface BrandInfoBrandInfo extends Struct.ComponentSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    navigations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::navigation.navigation'
-    >;
   };
 }
 

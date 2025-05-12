@@ -602,6 +602,7 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
 export interface ApiHeaderHeader extends Struct.CollectionTypeSchema {
   collectionName: 'headers';
   info: {
+    description: '';
     displayName: 'header';
     pluralName: 'headers';
     singularName: 'header';
@@ -610,6 +611,7 @@ export interface ApiHeaderHeader extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    actions: Schema.Attribute.Component<'brand-info.action', true>;
     brand: Schema.Attribute.Component<'brand-info.brand-info', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -620,6 +622,10 @@ export interface ApiHeaderHeader extends Struct.CollectionTypeSchema {
       'api::header.header'
     > &
       Schema.Attribute.Private;
+    navigations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation.navigation'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -701,6 +707,7 @@ export interface ApiNavigationNavigation extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    header: Schema.Attribute.Relation<'manyToOne', 'api::header.header'>;
     icon: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -714,6 +721,42 @@ export interface ApiNavigationNavigation extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNewsListNewsList extends Struct.CollectionTypeSchema {
+  collectionName: 'news lists';
+  info: {
+    description: 'Stores news with metadata';
+    displayName: 'News-list';
+    pluralName: 'news-lists';
+    singularName: 'news-list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-list.news-list'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    source_id: Schema.Attribute.String;
+    source_name: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+    urlToImage: Schema.Attribute.String;
   };
 }
 
@@ -1315,6 +1358,7 @@ declare module '@strapi/strapi' {
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::navigation.navigation': ApiNavigationNavigation;
+      'api::news-list.news-list': ApiNewsListNewsList;
       'api::product.product': ApiProductProduct;
       'api::sub-category.sub-category': ApiSubCategorySubCategory;
       'plugin::content-releases.release': PluginContentReleasesRelease;

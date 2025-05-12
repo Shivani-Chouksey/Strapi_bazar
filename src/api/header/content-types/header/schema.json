@@ -15,6 +15,17 @@
       "type": "component",
       "repeatable": false,
       "component": "brand-info.brand-info"
+    },
+    "navigations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::navigation.navigation",
+      "mappedBy": "header"
+    },
+    "actions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "brand-info.action"
     }
   }
 }
