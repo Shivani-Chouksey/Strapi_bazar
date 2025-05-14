@@ -2,18 +2,37 @@
   "collectionName": "components_banner_hero_banners",
   "info": {
     "displayName": "hero_banner",
-    "icon": "grid"
+    "icon": "grid",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "sub_heading": {
+      "type": "string"
+    },
+    "button": {
+      "displayName": "Button",
+      "type": "component",
+      "repeatable": true,
+      "component": "button.button"
+    },
+    "offer_section": {
+      "displayName": "offer",
+      "type": "component",
+      "repeatable": false,
+      "component": "product.offer"
     }
   }
 }

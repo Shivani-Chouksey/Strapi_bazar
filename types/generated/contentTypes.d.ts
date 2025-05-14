@@ -602,7 +602,6 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
 export interface ApiHeaderHeader extends Struct.CollectionTypeSchema {
   collectionName: 'headers';
   info: {
-    description: '';
     displayName: 'header';
     pluralName: 'headers';
     singularName: 'header';
@@ -670,7 +669,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     dynamic_components: Schema.Attribute.DynamicZone<
       ['testimonial.testimonial-section']
     >;
-    hero_section: Schema.Attribute.Component<'banner.hero-banner', false> &
+    hero_section: Schema.Attribute.Component<'banner.hero-banner', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

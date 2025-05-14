@@ -1,7 +1,8 @@
 {
   "collectionName": "components_product_product_sections",
   "info": {
-    "displayName": "product_section"
+    "displayName": "product_section",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,6 +18,11 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "button.button"
     }
   }
 }

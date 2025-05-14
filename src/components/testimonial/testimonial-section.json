@@ -1,7 +1,8 @@
 {
   "collectionName": "components_testimonial_testimonial_sections",
   "info": {
-    "displayName": "testimonial_section"
+    "displayName": "testimonial_section",
+    "description": ""
   },
   "options": {},
   "attributes": {

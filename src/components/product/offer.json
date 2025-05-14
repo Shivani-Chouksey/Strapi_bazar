@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_product_offers",
+  "info": {
+    "displayName": "offer"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "offer_value": {
+      "type": "integer"
+    }
+  }
+}

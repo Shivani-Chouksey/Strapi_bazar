@@ -16,12 +16,17 @@ export interface BannerAdvertisingSection extends Struct.ComponentSchema {
 export interface BannerHeroBanner extends Struct.ComponentSchema {
   collectionName: 'components_banner_hero_banners';
   info: {
+    description: '';
     displayName: 'hero_banner';
     icon: 'grid';
   };
   attributes: {
+    button: Schema.Attribute.Component<'button.button', true>;
+    heading: Schema.Attribute.String;
     images: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
+    offer_section: Schema.Attribute.Component<'product.offer', false>;
+    sub_heading: Schema.Attribute.String;
   };
 }
 
@@ -65,6 +70,17 @@ export interface BrandInfoBrandInfo extends Struct.ComponentSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+  };
+}
+
+export interface ButtonButton extends Struct.ComponentSchema {
+  collectionName: 'components_button_buttons';
+  info: {
+    displayName: 'Button';
+  };
+  attributes: {
+    lebel: Schema.Attribute.String;
+    link: Schema.Attribute.String;
   };
 }
 
@@ -121,6 +137,17 @@ export interface NavigationChildren extends Struct.ComponentSchema {
   };
 }
 
+export interface ProductOffer extends Struct.ComponentSchema {
+  collectionName: 'components_product_offers';
+  info: {
+    displayName: 'offer';
+  };
+  attributes: {
+    content: Schema.Attribute.String;
+    offer_value: Schema.Attribute.Integer;
+  };
+}
+
 export interface ProductPrice extends Struct.ComponentSchema {
   collectionName: 'components_product_prices';
   info: {
@@ -155,9 +182,11 @@ export interface ProductProductCard extends Struct.ComponentSchema {
 export interface ProductProductSection extends Struct.ComponentSchema {
   collectionName: 'components_product_product_sections';
   info: {
+    description: '';
     displayName: 'product_section';
   };
   attributes: {
+    button: Schema.Attribute.Component<'button.button', false>;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     sub_heading: Schema.Attribute.Text & Schema.Attribute.Required;
@@ -183,6 +212,7 @@ export interface TestimonialTestimonial extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.Text;
+    rating: Schema.Attribute.Integer;
     user: Schema.Attribute.Component<'testimonial.user-profile', false>;
   };
 }
@@ -190,6 +220,7 @@ export interface TestimonialTestimonial extends Struct.ComponentSchema {
 export interface TestimonialTestimonialSection extends Struct.ComponentSchema {
   collectionName: 'components_testimonial_testimonial_sections';
   info: {
+    description: '';
     displayName: 'testimonial_section';
   };
   attributes: {
@@ -222,10 +253,12 @@ declare module '@strapi/strapi' {
       'blog.blog-section': BlogBlogSection;
       'brand-info.action': BrandInfoAction;
       'brand-info.brand-info': BrandInfoBrandInfo;
+      'button.button': ButtonButton;
       'category.category-section': CategoryCategorySection;
       'footer.columns': FooterColumns;
       'footer.social': FooterSocial;
       'navigation.children': NavigationChildren;
+      'product.offer': ProductOffer;
       'product.price': ProductPrice;
       'product.product-card': ProductProductCard;
       'product.product-section': ProductProductSection;

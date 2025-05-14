@@ -14,7 +14,7 @@ const locale:string=ctx.query.locale as string || "en";
         locale,
             populate: {
                 hero_section:{
-                    populate: ['images'],
+                    populate: ['images',"button","offer_section"],
                 },
                 advertising_section:{
                     populate: ['cover_image'],
@@ -29,9 +29,10 @@ const locale:string=ctx.query.locale as string || "en";
                 product_section:{
                    populate:{
                     products:{
-                        populate:["images","sub_categories","categories","reviewRating"],
+                        populate:["images","sub_categories","categories","reviewRating","current_price","old_price"],
                        
-                    }
+                    },
+                    button:true
                    }
                 },
                 blog_section:{
